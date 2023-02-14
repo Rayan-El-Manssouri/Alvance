@@ -161,3 +161,31 @@ body {
 .message_error.visible {
     display: block;
 }
+
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 70%;
+    top: 50px;
+}
+
+.button:hover {
+    background-color: #388e3c;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}

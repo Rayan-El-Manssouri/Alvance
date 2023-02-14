@@ -40,7 +40,7 @@ function greet() {
         var responseContainer = document.createElement("div");
         responseContainer.classList.add("reponse_ia");
         var responseContent = document.createElement("p");
-        responseContent.innerHTML = "Je vous envoie un mail.";
+        responseContent.innerHTML = "Je vous envoie un mail !";
         responseContainer.appendChild(responseContent);
         chatHistory.appendChild(responseContainer);
     } else if (greeting.toLowerCase() === "qui es-tu ?") {

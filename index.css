@@ -140,3 +140,24 @@ body {
     background-color: rgb(76, 175, 80);
     color: white;
 }
+
+
+.message_error {
+    background-color: #f5f5f5;
+    color: black;
+    margin: 5px;
+    padding: 5px;
+    clear: both;
+    line-height: 1.5;
+    background-color: rgb(76, 175, 80);
+    color: white;
+    position: relative;
+    left: -5px;
+    width: 100%;
+    top: 5px;
+    display: none;
+}
+
+.message_error.visible {
+    display: block;
+}

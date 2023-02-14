@@ -1,6 +1,17 @@
 function greet() {
     var greeting = document.getElementById("greeting").value;
 
+    // Vérifier si le champ de saisie est vide
+    if (!greeting) {
+
+        // Si le champ de saisie est vide, ne rien faire
+        var message = document.getElementById("message");
+        message.classList.add("visible");
+        return;
+    }
+    // Si le champ de saisie est vide, ne rien faire
+    var message = document.getElementById("message");
+    message.classList.remove("visible");
     // Créer un nouveau message
     var messageContainer = document.createElement("div");
     var messageContent = document.createElement("p");
@@ -24,6 +35,14 @@ function greet() {
             "ok, je suis l'IA de ce chatbot, créé pour répondre à vos questions et vous aider dans vos tâches.";
         responseContainer.appendChild(responseContent);
         chatHistory.appendChild(responseContainer);
+    } else if (greeting === "Ecris moi un mail") {
+        // Si la question est "Ecris moi un mail"
+        var responseContainer = document.createElement("div");
+        responseContainer.classList.add("reponse_ia");
+        var responseContent = document.createElement("p");
+        responseContent.innerHTML = "Je vous envoie un mail.";
+        responseContainer.appendChild(responseContent);
+        chatHistory.appendChild(responseContainer);
     } else if (greeting.toLowerCase() === "qui es-tu ?") {
         var responseContainer = document.createElement("div");
         responseContainer.classList.add("reponse_ia");
@@ -32,10 +51,18 @@ function greet() {
             "Je suis l'IA de ce chatbot, créé pour répondre à vos questions et vous aider dans vos tâches.";
         responseContainer.appendChild(responseContent);
         chatHistory.appendChild(responseContainer);
+    } else if (greeting === "Quel est ton nom ?") {
+        var responseContainer = document.createElement("div");
+        responseContainer.classList.add("reponse_ia");
+        var responseContent = document.createElement("p");
+        responseContent.innerHTML = "Mon nom est Alvance.";
+        responseContainer.appendChild(responseContent);
+        chatHistory.appendChild(responseContainer);
     } else if (greeting === "Salut !" || greeting === "Hey") {
         // Si la question est "Salut !" ou "Hey"
         var responseContainer = document.createElement("div");
         var responseContent = document.createElement("p");
+        responseContainer.classList.add("reponse_ia");
         responseContent.innerHTML = "Bonjour !";
         responseContainer.appendChild(responseContent);
         chatHistory.appendChild(responseContainer);

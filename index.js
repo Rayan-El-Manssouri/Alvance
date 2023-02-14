@@ -15,8 +15,25 @@ function greet() {
 
     // Effacer le champ de saisie
     document.getElementById("greeting").value = "";
-
-    if (greeting === "Salut !" || greeting === "Hey") {
+    // Si la question est "Qui es-tu ?"
+    if (greeting === "ok") {
+        var responseContainer = document.createElement("div");
+        responseContainer.classList.add("reponse_ia");
+        var responseContent = document.createElement("p");
+        responseContent.innerHTML =
+            "ok, je suis l'IA de ce chatbot, créé pour répondre à vos questions et vous aider dans vos tâches.";
+        responseContainer.appendChild(responseContent);
+        chatHistory.appendChild(responseContainer);
+    } else if (greeting.toLowerCase() === "qui es-tu ?") {
+        var responseContainer = document.createElement("div");
+        responseContainer.classList.add("reponse_ia");
+        var responseContent = document.createElement("p");
+        responseContent.innerHTML =
+            "Je suis l'IA de ce chatbot, créé pour répondre à vos questions et vous aider dans vos tâches.";
+        responseContainer.appendChild(responseContent);
+        chatHistory.appendChild(responseContainer);
+    } else if (greeting === "Salut !" || greeting === "Hey") {
+        // Si la question est "Salut !" ou "Hey"
         var responseContainer = document.createElement("div");
         var responseContent = document.createElement("p");
         responseContent.innerHTML = "Bonjour !";
@@ -26,6 +43,7 @@ function greet() {
         greeting.startsWith("console.log(") &&
         greeting.endsWith(")")
     ) {
+        // Si la question utilise console.log()
         var logContent = /"([^"]*)"/.exec(greeting)[1];
         var responseContainer = document.createElement("div");
         responseContainer.classList.add("reponse_ia");
@@ -34,6 +52,7 @@ function greet() {
         responseContainer.appendChild(responseContent);
         chatHistory.appendChild(responseContainer);
     } else {
+        // Si la question n'est pas reconnue
         var responseContainer = document.createElement("div");
         responseContainer.classList.add("reponse_ia");
         var responseContent = document.createElement("p");
@@ -41,4 +60,7 @@ function greet() {
         responseContainer.appendChild(responseContent);
         chatHistory.appendChild(responseContainer);
     }
+
+    // Effacer le champ de saisie
+    document.getElementById("greeting").value = "";
 }

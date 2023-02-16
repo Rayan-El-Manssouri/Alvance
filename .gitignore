@@ -1,0 +1,6 @@
+# Module Electron JS app
+node_modules/
+package-lock.json
+package.json
+preload.js
+alvance-win32-x64/
